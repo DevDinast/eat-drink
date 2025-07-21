@@ -1,0 +1,145 @@
+/* ============================
+   CONTAINER FORMULAIRE
+============================ */
+.form-container {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  margin: 3rem auto;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* TITRE & SOUS-TITRE */
+.form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff7a00;
+  margin-bottom: 0.4rem;
+}
+
+.form-header .subtitle {
+  font-size: 1rem;
+  color: #6b3fc9;
+}
+
+/* GROUPES DE CHAMPS */
+.form-group {
+  margin-bottom: 1.6rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #6b3fc9;
+  font-size: 0.95rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff9f3;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #a657ff;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Checkbox */
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-input {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff9f3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkbox-input:checked {
+  background: linear-gradient(to right, #ff7a00, #a657ff);
+  border-color: transparent;
+}
+
+/* LIEN MOT DE PASSE OUBLIÉ */
+.link-forgot-password {
+  font-size: 0.9rem;
+  color: #6b3fc9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-forgot-password:hover {
+  text-decoration: underline;
+  color: #ff7a00;
+}
+
+/* BOUTON DE CONNEXION */
+.button-submit {
+  background: linear-gradient(to right, #ff7a00, #a657ff);
+  color: white;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button-submit:hover {
+  background: linear-gradient(to right, #e96c00, #8c3dfb);
+}
+
+/* ERREURS */
+.x-input-error {
+  color: #d60000;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+/* ANIMATION FADE IN */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 2rem 1rem;
+    margin: 1.5rem;
+  }
+
+  .button-submit {
+    width: 100%;
+  }
+}

@@ -28,23 +28,34 @@ class RegisteredUserController extends Controller
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+{
+    $request->validate([
+        'nom_entreprise' => ['required', 'string', 'max:255'],
+        'nom_responsable' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+        'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        'password_confirmation' => ['required'],
+        'telephone' => ['required', 'regex:/^0[0-9]{9}$/'],
+        'nom_stand' => ['required', 'string', 'max:255'],
+        'description_stand' => ['required', 'string', 'max:255'],
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    ]);
 
-        event(new Registered($user));
+    $user = User::create([
+        'nom_entreprise' => $request->nom_entreprise,
+        'nom_responsable' => $request->nom_responsable,
+        'telephone' => $request->telephone,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'role' => 'entrepreneur_en_attente',
+        'statut' => 'en_attente',
+    ]);
 
-        Auth::login($user);
+    // Optionnel : Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
-    }
+    event(new Registered($user));
+
+    return redirect()->route('en_attente');
+}
+
 }

@@ -9,3 +9,12 @@
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+# Normalise les fins de ligne entre les OS
+* text=auto
+
+# Pour les fichiers PHP, Blade, JS, CSS, etc.
+*.php text
+*.blade.php text
+*.js text
+*.css text
+*.html text

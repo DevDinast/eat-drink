@@ -1,0 +1,133 @@
+/* =========================
+   STYLES GÉNÉRAUX
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fdf9f3;
+  color: #2e1d4d;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   TITRE DE PAGE
+========================= */
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #a657ff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   MESSAGES DE SESSION
+========================= */
+p {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+p.success {
+  color: #27ae60;
+}
+
+p.error {
+  color: #d63031;
+}
+
+/* =========================
+   TABLEAU
+========================= */
+table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(166, 87, 255, 0.1);
+}
+
+thead {
+  background: linear-gradient(to right, #ff7a00, #a657ff);
+  color: white;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+  background-color: #f8f2ff;
+}
+
+/* =========================
+   BOUTONS
+========================= */
+button {
+  background: linear-gradient(to right, #ff7a00, #a657ff);
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(166, 87, 255, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(to right, #e96c00, #8c3dfb);
+  box-shadow: 0 8px 20px rgba(166, 87, 255, 0.3);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    border-radius: 12px;
+    padding: 1rem;
+    background: #fff;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    color: #6b3fc9;
+    width: 45%;
+  }
+}
