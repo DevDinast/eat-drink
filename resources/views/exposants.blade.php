@@ -17,7 +17,7 @@
     @else
         <div class="stands-list">
             @foreach($stands as $stand)
-                <div class="stand-card">
+                <div class="stand-card" style="margin-top: 70px; width: 450px; justify-content: space-between; border: solid 1px black; padding: 20px; border-radius: 10px; background-color: #fffffd; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) ;">
                     @if($stand->photo)
                         <img src="{{ asset('storage/' . $stand->photo) }}" alt="Photo du stand {{ $stand->nom }}">
                     @endif
@@ -36,7 +36,7 @@
     @endif
 </main>
 
-<footer>
+<footer style="">
     &copy; 2025 Eat&Drink.
 </footer>
 

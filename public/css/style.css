@@ -82,7 +82,7 @@ main, .container, header, footer, .footer-main {
    EN-TÊTE
 ============================ */
 header {
-  background: #fff;
+  background-color:#3a2e28; color:#fff; text-align:center; padding:2rem 0;
   color: #ff7a00;
   padding: 2rem 1rem;
   text-align: center;
@@ -316,7 +316,7 @@ textarea:focus {
    PIED DE PAGE
 ============================ */
 footer {
-  background: #a657ff;
+  background: #3a2e28;
   color: white;
   padding: 1.5rem 1rem;
   text-align: center;

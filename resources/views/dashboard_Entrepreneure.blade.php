@@ -12,7 +12,7 @@
         <h1>Eat&Drink - Espace Entrepreneur</h1>
     </header>
 
-    <div class="container">
+    <div class="container" style="width: 800px;">
         <div class="presentation dashboard-container">
             <h2>Bienvenue {{ Auth::user()->nom_responsable }}</h2>
 
