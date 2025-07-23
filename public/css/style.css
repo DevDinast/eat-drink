@@ -9,7 +9,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fdf9f3;
+  background: #fff;
   color: #2e1d4d;
   line-height: 1.6;
   min-height: 100vh;
@@ -46,6 +46,47 @@ header p {
   font-size: 1.2rem;
   font-weight: 500;
   opacity: 0.9;
+}
+
+.presentation {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #ff7a00;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(255,122,0,0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.btn:hover {
+  background: #a657ff;
+  box-shadow: 0 4px 12px rgba(166,87,255,0.12);
+}
+
+.text-danger {
+  color: #e53e3e;
+  font-weight: bold;
+}
+.text-warning {
+  color: #d69e2e;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #f3eaff;
+  color: #4a5568;
+  margin-top: 2.5rem;
+  font-size: 0.95rem;
+  border-top: 1px solid #e2e8f0;
 }
 
 /* ============================
