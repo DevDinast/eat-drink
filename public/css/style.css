@@ -164,10 +164,12 @@ footer p {
 ============================ */
 .form-container {
   background: #fff;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
-  margin-bottom: 3rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem;
+  max-width: 480px;
+  margin: 3rem auto 2rem auto;
+  opacity: 0.98;
 }
 
 .form-header {
@@ -450,7 +452,7 @@ body.register-page {
 }
 
 body.register-bg {
-  background: #fff !important;
+  background: #FFF8DC !important;
 }
 
 .dashboard-container {

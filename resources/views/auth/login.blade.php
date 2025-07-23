@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout bodyClass="register-bg">
     <link rel="stylesheet" href="{{ asset('css/stylelogin.css') }}">
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
