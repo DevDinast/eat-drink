@@ -7,20 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 class Produit extends Model
 {
 
-    protected $table = 'products';
+    protected $table = 'produits';
 
     // Champs modifiables en masse
     protected $fillable = [
-        'nom',
-        'description',
-        'prix',
-        'image_url',
-        'user_id',
-    ];
+    'user_id',
+    'stand_id',
+    'nom',
+    'description',
+    'prix',
+    'quantite',
+];
+
 
     // Relation vers l'utilisateur (entrepreneur)
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+    
+
 }

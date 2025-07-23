@@ -50,4 +50,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function stand()
+{
+    return $this->hasOne(Stand::class);
+}
+
 }

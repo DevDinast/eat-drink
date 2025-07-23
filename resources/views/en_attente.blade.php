@@ -14,16 +14,21 @@
 
     <div class="container">
         <div class="presentation">
-            @if(session('statut') === 'refuse')
-                <h2>Merci pour votre inscription !</h2>
-                <p>Mais nous sommes au regret de vous informer que votre inscription a été <strong>refusée</strong>.</p>
+            @if(Auth::check())
+                @if(Auth::user()->statut === 'en_attente')
+                    <p>Votre demande est encore en attente ⏳.</p>
+                    <p>Merci de patienter pendant la vérification de votre profil par l'équipe d'administration.</p>
+                @elseif(Auth::user()->statut === 'refuse')
+                    <p class="text-danger">❌ Votre inscription a été <strong>refusée</strong>.</p>
+                    <p>Contactez l'administration pour plus d'informations.</p>
+                @elseif(Auth::user()->statut === 'approuve')
+                    <p>✅ Félicitations ! Votre compte a été validé avec succès.</p>
+                    <a href="{{ route('dashboard_Entrepreneure') }}" class="btn">Accéder à votre espace</a>
+                @endif
             @else
-                <h2>Merci pour votre inscription !</h2>
-                <p>Votre demande a bien été enregistrée.</p>
-                <p>Elle est actuellement en cours de traitement par notre équipe.</p>
+                <p class="text-warning">⚠ Vous n’êtes pas connecté. Veuillez vous connecter pour voir votre statut.</p>
+                <a href="{{ route('login') }}" class="btn">Retour à la connexion</a>
             @endif
-
-            <a href="{{ route('login') }}" class="btn">Retour à la connexion</a>
         </div>
     </div>
 

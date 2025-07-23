@@ -23,15 +23,26 @@ class AdminController extends Controller
      * Valide un entrepreneur.
      */
     public function valider($id)
-    {
-        $user = User::findOrFail($id);
-        $user->statut = 'approuve';
-        $user->role = 'entrepreneur';
-        $user->save();
+{
+    $user = User::findOrFail($id);
 
-        return redirect()->back()->with('success', 'Utilisateur approuvé avec succès.');
-        return redirect()->back('dashboard');
+    // ✅ Mise à jour du statut et rôle
+    $user->statut = 'approuve';
+    $user->role = 'entrepreneur';
+    $user->save();
+
+    // ✅ Création automatique du stand si non existant
+    if (!$user->stand) {
+        $user->stand()->create([
+            'nom' => $user->nom_entreprise ?? 'Stand de ' . $user->name,
+            'description' => $user->description_entreprise ?? null,
+            'statut' => 'approuve'
+        ]);
     }
+
+    return redirect()->back()->with('success', 'Utilisateur approuvé et stand créé avec succès.');
+}
+
 
     /**
      * Rejette un entrepreneur.
