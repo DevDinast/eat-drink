@@ -23,25 +23,24 @@ body::before {
   content: '';
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.05);
   z-index: 0;
   pointer-events: none;
 }
 
-main, .container, header, footer {
+main, .container, header, footer, .footer-main {
   position: relative;
   z-index: 1;
 }
 
 .container {
   flex: 1;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 3rem auto;
   padding: 0 1.5rem;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0 1.5rem;
-  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .presentation {
@@ -50,25 +49,23 @@ main, .container, header, footer {
   box-shadow: none;
   padding: 0;
   margin-bottom: 0;
-  height: 100%;
-  border-radius: 15px;
-  background-color: #fff;
-  width: 50%;
-  margin: 0 auto;
-  padding: 2rem;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.4s ease;
 }
 
 .cta-box {
   background: #fff;
   border: 1px solid #eee;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   padding: 2rem 1.5rem;
-  flex: 1 1 300px;
+  flex: 1 1 280px;
+  min-width: 260px;
+  max-width: 350px;
   text-align: center;
-  margin-bottom: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cta-box:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(79,140,255,0.10);
 }
 
 /* ============================
@@ -136,12 +133,20 @@ header p {
 
 footer {
   text-align: center;
-  padding: 1rem 0;
-  background: #fff;
-  color: #111;
-  margin-top: 2.5rem;
-  font-size: 0.95rem;
+  padding: 2rem 0 1rem 0;
+  background: rgba(255,255,255,0.85);
+  color: #222;
+  font-size: 1.05rem;
   border-top: 1px solid #e2e8f0;
+  margin-top: 3rem;
+  letter-spacing: 1px;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
+}
+footer p {
+  margin: 0;
+  font-weight: 500;
+  opacity: 0.85;
+  letter-spacing: 1px;
 }
 
 /* ============================
@@ -245,6 +250,7 @@ textarea:focus {
 
 .cta-section {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   margin-top: 2.5rem;
@@ -445,5 +451,3 @@ body.register-bg {
   margin: 3rem auto;
   max-width: 1200px;
 }
-
-
