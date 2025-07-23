@@ -3,7 +3,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <div class="form-container">
+    <div class="form-container" style="background-color: #FFF8DC;">
 
         <div class="form-header">
             <h1>Connexion</h1>
