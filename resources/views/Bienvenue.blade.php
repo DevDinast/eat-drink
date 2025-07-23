@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eat&Drink 2025 - Événement Culinaire</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
+
 </head>
+
 <body>
 
     <!-- En-tête -->
-    <header style="background:#fff; text-align:center; padding:2rem 0;">
-        <h1 style="color:#111; margin-bottom:0.5rem;">Eat&Drink 2025</h1>
+    <header style="background-color:#FFFFF0; color:#fff; text-align:center; padding:2rem 0; ">
+        <h1>Eat&Drink 2025</h1>
         <p style="color:#111;">Le plus grand rendez-vous culinaire des artisans du goût</p>
     </header>
 
     <!-- Contenu principal -->
     <div class="container">
         <!-- Section de présentation -->
-        <section class="presentation">
-            <h2>Bienvenue à l'événement Eat&Drink !</h2>
-            <p>
-                Des dizaines de stands, des produits frais et artisanaux, et des expériences gustatives inoubliables vous attendent. 
-                Rejoignez-nous pour découvrir les meilleurs talents culinaires de la région !
-            </p>
-            <a href="/register" class="btn">Je suis entrepreneur</a>
-        </section>
-
+        <div class="presentation-section">
+            <section style="background-color: #fff; padding: 30px; border-radius: 15px;" class="presentation">
+                <h2>Bienvenue à l'événement Eat&Drink !</h2>
+                <p>
+                    Des dizaines de stands, des produits frais et artisanaux, et des expériences gustatives inoubliables
+                    vous attendent.
+                    Rejoignez-nous pour découvrir les meilleurs talents culinaires de la région !
+                </p>
+                <a href="/register" class="btn">Je suis entrepreneur</a>
+            </section>
+        </div>
         <!-- Appels à action -->
         <section class="cta-section">
             <div class="cta-box">
@@ -44,9 +48,10 @@
     </div>
 
     <!-- Pied de page -->
-    <footer>
+    <footer style="background-color: #FFFFF0; color: #111; text-align: center; padding: 1rem;">
         <p>&copy; 2025 Eat&Drink - Tous droits réservés</p>
     </footer>
 
 </body>
+
 </html>

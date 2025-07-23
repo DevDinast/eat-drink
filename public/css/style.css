@@ -9,7 +9,6 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('/img/stand2.jpeg') no-repeat center center fixed;
   background-size: cover;
   color: #111;
   line-height: 1.6;
@@ -17,13 +16,13 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: #FFF8DC;
 }
 
 body::before {
   content: '';
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.05);
   z-index: 0;
   pointer-events: none;
 }
@@ -51,6 +50,14 @@ main, .container, header, footer {
   box-shadow: none;
   padding: 0;
   margin-bottom: 0;
+  height: 100%;
+  border-radius: 15px;
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease;
 }
 
 .cta-box {
@@ -229,7 +236,7 @@ textarea:focus {
 ============================ */
 .presentation, .cta-section, .cta-box {
   color: #111;
-  background: #fff;
+  background: #FFF8DC;
 }
 
 .presentation h2 {
@@ -251,6 +258,7 @@ textarea:focus {
   padding: 2rem 1.5rem;
   flex: 1 1 300px;
   text-align: center;
+  border-radius: 20px;
 }
 
 .cta-box h3 {
@@ -419,9 +427,7 @@ footer {
 
 }
 
-header {
-  background: transparent !important;
-}
+
 
 body.register-page {
   /* supprimé : plus de fond blanc forcé */
@@ -439,3 +445,5 @@ body.register-bg {
   margin: 3rem auto;
   max-width: 1200px;
 }
+
+
