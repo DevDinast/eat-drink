@@ -12,9 +12,9 @@
 <body>
 
     <!-- En-tête -->
-    <header style="background-color:#FFFFF0; color:#fff; text-align:center; padding:2rem 0; ">
+    <header style="background-color:#3a2e28; color:#fff; text-align:center; padding:2rem 0; ">
         <h1>Eat&Drink 2025</h1>
-        <p style="color:#111;">Le plus grand rendez-vous culinaire des artisans du goût</p>
+        <p style="color:#fff;">Le plus grand rendez-vous culinaire des artisans du goût</p>
     </header>
 
     <!-- Contenu principal -->
@@ -47,9 +47,6 @@
         </section>
     </div>
 
-    <!-- Pied de page -->
-    <footer style="background-color: #FFFFF0; color: #111; text-align: center; padding: 1rem;">
-        <p>&copy; 2025 Eat&Drink - Tous droits réservés</p>
     <!-- Pied de page moderne -->
     <footer class="footer-main">
       <div class="footer-content">
