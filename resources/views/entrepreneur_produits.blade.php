@@ -12,13 +12,13 @@
     <a href="{{ route('entrepreneure_create') }}" class="btn">Ajouter un produit</a>
 </header>
 
-<main class="container">
+<main class="container" style="margin-top: 70px; width: 600px; justify-content: space-between; border: solid 1px black; padding: 20px; border-radius: 10px; background-color: #fffffd; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) ;" >
     @if($produits->isEmpty())
         <p>Vous n'avez encore ajouté aucun produit.</p>
     @else
-        <table>
+        <table >
             <thead>
-                <tr>
+                <tr >
                     <th>Nom</th>
                     <th>Description</th>
                     <th>Prix</th>
@@ -30,7 +30,7 @@
                 @foreach($produits as $produit)
                     <tr>
                         <td>{{ $produit->nom }}</td>
-                        <td>{{ $produit->description }}</td>
+                        <td style="text-align: center;">{{ $produit->description }}</td>
                         <td>{{ $produit->prix }} €</td>
                         <td>
                             @if($produit->photo)
@@ -40,11 +40,11 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ route('entrepreneur_produits', $produit) }}">Modifier</a> |
+                            <a style="text-decoration: none; color: blue;" href="{{ route('entrepreneur_produits', $produit) }}">Modifier</a> |
                             <form action="{{ route('entrepreneur_destroy', $produit) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" onclick="return confirm('Supprimer ce produit ?')">Supprimer</button>
+                                <button style="border: 1px solid red; background-color: red; width: 60px; height: 20px; border-radius: 5px;" type="submit" onclick="return confirm('Supprimer ce produit ?')">Supp</button>
                             </form>
                         </td>
                     </tr>
