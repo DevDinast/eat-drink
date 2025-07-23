@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BienvenueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,8 @@ Route::get('/index', function () {
 Route::get('/exposants', function () {
     return view('exposants');
 });
+
+Route::get('/bienvenue', [BienvenueController::class, 'index'])->name('bienvenue');
 
 
 /*
