@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProduitsController;
 use App\Http\Controllers\StandController;
 use App\Http\Controllers\CommandeController;
+use App\Models\Stand;
 
 
 /*
@@ -17,11 +18,20 @@ use App\Http\Controllers\CommandeController;
 
 Route::get('/', fn () => view('welcome'));
 
-Route::get('/index', fn () => view('Bienvenue'))->name('index');
+Route::get('/index', function () {
+    $stands = Stand::all();
+    return view('Bienvenue', compact('stands'));
+})->name('index');
 
 Route::get('/exposants', function () {
-    return view('exposants');
-});
+    $stands = Stand::all();
+    return view('exposants', compact('stands'));
+})->name('exposants');
+
+Route::get('/en-attente', function () {
+    $stands = Stand::all();
+    return view('en_attente', compact('stands'));
+})->name('en_attente');
 
 
 /*
@@ -93,3 +103,5 @@ Route::get('/stand/{id}/commande', [CommandeController::class, 'create'])->name(
 
 // Enregistrement de la commande
 Route::post('/stand/{id}/commande', [CommandeController::class, 'store'])->name('commande.store');
+
+Route::get('/stand/{id}/commande', [CommandeController::class, 'create'])->name('stand_commande');

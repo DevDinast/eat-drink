@@ -13,7 +13,7 @@
     </header>
 
     <div class="container">
-        <div class="presentation">
+        <div class="presentation dashboard-container">
             <h2>Bienvenue {{ Auth::user()->nom_responsable }}</h2>
 
             <p>✅ Votre demande a été approuvée.</p>

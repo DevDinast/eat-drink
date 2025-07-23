@@ -10,9 +10,9 @@
 <body>
 
     <!-- En-tête -->
-    <header>
-        <h1>Eat&Drink 2025</h1>
-        <p>Le plus grand rendez-vous culinaire des artisans du goût</p>
+    <header style="background:#fff; text-align:center; padding:2rem 0;">
+        <h1 style="color:#111; margin-bottom:0.5rem;">Eat&Drink 2025</h1>
+        <p style="color:#111;">Le plus grand rendez-vous culinaire des artisans du goût</p>
     </header>
 
     <!-- Contenu principal -->

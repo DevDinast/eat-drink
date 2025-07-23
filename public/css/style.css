@@ -9,12 +9,28 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff;
-  color: #2e1d4d;
+  background: url('/img/stand2.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #111;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.05);
+  z-index: 0;
+  pointer-events: none;
+}
+
+main, .container, header, footer {
+  position: relative;
+  z-index: 1;
 }
 
 .container {
@@ -22,52 +38,84 @@ body {
   max-width: 1200px;
   margin: 3rem auto;
   padding: 0 1.5rem;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 1.5rem;
+  margin-bottom: 0;
+}
+
+.presentation {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.cta-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 2rem 1.5rem;
+  flex: 1 1 300px;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 /* ============================
    EN-TÊTE
 ============================ */
 header {
-  background: linear-gradient(90deg, #ff7a00, #a657ff);
-  color: white;
+  background: #fff;
+  color: #ff7a00;
   padding: 2rem 1rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(166, 87, 255, 0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
 }
 
 header h1 {
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 0.3rem;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.15);
+  color: #ff7a00;
+  text-shadow: none;
 }
 
 header p {
   font-size: 1.2rem;
   font-weight: 500;
   opacity: 0.9;
+  color: #a657ff;
 }
 
 .presentation {
   text-align: center;
   margin-top: 2rem;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .btn {
   display: inline-block;
-  background: #ff7a00;
-  color: #fff;
+  background: #e0e0e0;
+  color: #222;
   padding: 0.7rem 1.4rem;
   border-radius: 4px;
   text-decoration: none;
   margin-top: 1.2rem;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(255,122,0,0.08);
-  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(160,160,160,0.08);
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
 }
 .btn:hover {
-  background: #a657ff;
-  box-shadow: 0 4px 12px rgba(166,87,255,0.12);
+  background: #bdbdbd;
+  color: #111;
+  box-shadow: 0 4px 12px rgba(160,160,160,0.12);
 }
 
 .text-danger {
@@ -82,8 +130,8 @@ header p {
 footer {
   text-align: center;
   padding: 1rem 0;
-  background: #f3eaff;
-  color: #4a5568;
+  background: #fff;
+  color: #111;
   margin-top: 2.5rem;
   font-size: 0.95rem;
   border-top: 1px solid #e2e8f0;
@@ -179,16 +227,34 @@ textarea:focus {
 /* ============================
    SECTION ACCUEIL & EXPOSANTS
 ============================ */
-.presentation,
-.cta-box,
-.exposant-card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.05);
-  padding: 2rem;
-  margin-bottom: 2rem;
+.presentation, .cta-section, .cta-box {
+  color: #111;
+  background: #fff;
+}
+
+.presentation h2 {
+  color: #ff7a00;
+}
+
+.cta-section {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.cta-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 2rem 1.5rem;
+  flex: 1 1 300px;
   text-align: center;
-  transition: transform 0.3s ease;
+}
+
+.cta-box h3 {
+  color: #a657ff;
 }
 
 .presentation:hover,
@@ -196,14 +262,6 @@ textarea:focus {
 .exposant-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 36px rgba(166, 87, 255, 0.3);
-}
-
-.presentation h2,
-.cta-box h3,
-.exposant-card h3 {
-  color: #a657ff;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
 }
 
 .presentation p,
@@ -359,4 +417,25 @@ footer {
 
     
 
+}
+
+header {
+  background: transparent !important;
+}
+
+body.register-page {
+  /* supprimé : plus de fond blanc forcé */
+}
+
+body.register-bg {
+  background: #fff !important;
+}
+
+.dashboard-container {
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2rem 1.5rem;
+  margin: 3rem auto;
+  max-width: 1200px;
 }

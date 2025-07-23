@@ -16,7 +16,8 @@ class StandController extends Controller
             return redirect()->route('login')->with('error', 'Veuillez vous connecter pour créer un stand.');
         }
 
-        return view('stand_create');
+        $stands = Stand::all();
+        return view('stand_create', compact('stands'));
     }
 
     // Enregistre un nouveau stand
