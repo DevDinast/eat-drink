@@ -7,43 +7,69 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
+
+    public function redirectUser()
+{
+    $user = session('user');
+
+    if (!$user) {
+        return redirect('/login');
+    }
+
+    if ($user['role'] === 'admin') {
+        return redirect()->route('demande');
+    }
+
+    if ($user['statut'] === 'valide') {
+        return view('dashboard_Entrepreneure');
+    }
+
+    return view('en_attente');
+}
+
+    // Affiche le formulaire de connexion
     public function showLoginForm()
     {
         return view('auth.login');
     }
 
+    // Traitement de la tentative de connexion
     public function login(Request $request)
     {
-        // 1. Valider les identifiants
+        // Validation des champs
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        // 2. Tenter de connecter
+        // Tentative d'authentification
         if (Auth::attempt($credentials)) {
+            // Régénère la session pour des raisons de sécurité
             $request->session()->regenerate();
 
             $user = Auth::user();
 
-            // 3. Si le statut n'est pas "approuve", on déconnecte et redirige avec le statut
+            // Redirection selon le statut de l'utilisateur
             if ($user->statut !== 'approuve') {
-                $statut = $user->statut;
-                Auth::logout();
-                return redirect()->route('en_attente')->with('statut', $statut);
+                // Ne PAS déconnecter l'utilisateur, garder la session active
+                return redirect()->route('en_attente')->with('error', 'Votre compte n’est pas encore approuvé.');
             }
 
-            // 4. Redirection selon le rôle
+            // Redirection selon le rôle
             if ($user->role === 'entrepreneur') {
-                return redirect()->route('entrepreneur.dashboard');
+                return redirect()->route('dashboard_Entrepreneure');
             }
 
             if ($user->role === 'admin') {
-                return redirect()->route('admin.demandes');
+                return redirect()->route('demande');
             }
+
+            // Cas par défaut
+            return redirect('/');
         }
 
-        // 5. Erreur : identifiants incorrects
+        // Si échec de connexion
         return back()->withErrors([
             'email' => 'Les identifiants sont incorrects.',
         ])->onlyInput('email');
